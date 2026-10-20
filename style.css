@@ -16,7 +16,7 @@ html, body {
 /* Make all images scale nicely */
 img {
   max-width: 100%;   /* never overflow container */
-  height: auto;      /* keep aspect ratio */
+  height: 30%;      /* keep aspect ratio */
   display: block;    /* removes inline gaps */
   margin: 0 auto;    /* centers images */
   border-radius: 8px;
