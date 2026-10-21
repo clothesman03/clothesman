@@ -1,6 +1,6 @@
 
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Grenze+Gotisch:wght@100..900&family=Rubik+Spray+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chicle&family=Fleur+De+Leah&family=Grenze+Gotisch:wght@100..900&display=swap');
 
 /* Colour palette */
 :root {
@@ -76,8 +76,8 @@ h1 {
 }
 
 h2 {
-  font-family: 'Rubik Spray Paint', system-ui;
-  font-size: 4em;
+  font-family: 'Chicle', serif;
+  font-size: 5em;
   margin-bottom: 20px;
   color: var(--heading);
 }
