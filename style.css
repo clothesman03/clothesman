@@ -1,5 +1,6 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Grenze+Gotisch:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Grenze+Gotisch:wght@100..900&family=Rubik+Spray+Paint&display=swap');
+
 
 
 /* Global page setup */
@@ -66,7 +67,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Grenze Gotisch', serif;
+  font-family: 'Rubik Spray Paint', system-ui;
   font-size: 1.5em;
   margin-bottom: 20px;
 }
