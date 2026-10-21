@@ -70,14 +70,14 @@ img {
 /* Typography */
 h1 {
   font-family: 'Fleur De Leah', cursive;
-  font-size: 3em;
+  font-size: 5em;
   margin-bottom: 20px;
   color: var(--heading);
 }
 
 h2 {
   font-family: 'Rubik Spray Paint', system-ui;
-  font-size: 1.5em;
+  font-size: 4em;
   margin-bottom: 20px;
   color: var(--heading);
 }
