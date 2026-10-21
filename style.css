@@ -1,7 +1,15 @@
+
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Grenze+Gotisch:wght@100..900&family=Rubik+Spray+Paint&display=swap');
 
-
+/* Colour palette */
+:root {
+  --background: #ffffff;
+  --text: #294936;
+  --heading: #234b35;
+  --link: #38744b;
+  --link-hover: #183d29;
+}
 
 /* Global page setup */
 html, body {
@@ -9,17 +17,17 @@ html, body {
   padding: 0;
   min-height: 100%;
   font-family: 'Grenze Gotisch', serif;
-  background-color: black;
-  color: white;
+  background-color: var(--background);
+  color: var(--text);
   text-align: center;
 }
 
 /* Make all images scale nicely */
 img {
-  max-width: 100%;   /* never overflow container */
-  height: 30%;      /* keep aspect ratio */
-  display: block;    /* removes inline gaps */
-  margin: 0 auto;    /* centers images */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
   border-radius: 8px;
 }
 
@@ -64,26 +72,32 @@ h1 {
   font-family: 'Fleur De Leah', cursive;
   font-size: 3em;
   margin-bottom: 20px;
+  color: var(--heading);
 }
 
 h2 {
   font-family: 'Rubik Spray Paint', system-ui;
   font-size: 1.5em;
   margin-bottom: 20px;
+  color: var(--heading);
 }
 
 p {
   font-size: 1.2em;
   line-height: 1.6;
   margin: 0 auto 20px auto;
+  color: var(--text);
 }
 
+/* Links */
 a {
-  color: #00bcd4;
+  color: var(--link);
   text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
 a:hover {
+  color: var(--link-hover);
   text-decoration: underline;
 }
 
@@ -92,9 +106,11 @@ a:hover {
   .logo {
     max-width: 150px;
   }
+
   .site-links img {
     max-width: 200px;
   }
+
   h1 {
     font-size: 2.5em;
   }
@@ -104,31 +120,34 @@ a:hover {
   .logo {
     max-width: 250px;
   }
+
   .site-links img {
     max-width: 350px;
   }
+
   h1 {
     font-size: 4.5em;
   }
 }
 
-
+/* Audio player */
 audio {
-  width: 100%;      /* responsive player */
-  max-width: 400px; /* keep it neat */
+  width: 100%;
+  max-width: 400px;
   margin: 10px auto;
   display: block;
 }
 
+/* Video container */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
   margin: 20px auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 12px rgba(35, 75, 53, 0.15);
 }
 
 .video-container iframe {
@@ -139,4 +158,3 @@ audio {
   height: 100%;
   border: none;
 }
-
