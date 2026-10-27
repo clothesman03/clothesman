@@ -1,6 +1,4 @@
-
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Chicle&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fleur+De+Leah&display=swap');
+/* The Clothes Man – stylesheet (fonts are loaded via <link> in index.html) */
 
 /* Colour palette */
 :root {
@@ -11,7 +9,11 @@
   --link-hover: #183d29;
 }
 
+*, *::before, *::after { box-sizing: border-box; }
+
 /* Global page setup */
+html { -webkit-text-size-adjust: 100%; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -22,70 +24,51 @@ html, body {
   text-align: center;
 }
 
-/* Make all images scale nicely */
+/* Images scale nicely */
 img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   border-radius: 8px;
 }
 
 /* Container for all content */
 .container {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Logo only */
-.logo {
-  max-width: 200px;
-  margin-bottom: 20px;
-}
+header { padding: 20px 16px 0; }
 
-/* Site links section */
-.site-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+/* Images */
+.logo  { width: 100%; max-width: 250px; margin-bottom: 20px; }
+.steps { width: 100%; max-width: 560px; }
 
-.site-links img {
-  max-width: 300px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.site-links img:hover {
-  transform: scale(1.05);
-}
-
-/* Social icons */
-.logos {
-  width: 40px;
-  height: auto;
-}
-
-/* Typography */
+/* Typography – sizes scale with screen width (min, preferred, max) */
 h1 {
   font-family: 'Fleur De Leah', cursive;
-  font-size: 5em;
-  margin-bottom: 20px;
+  font-size: clamp(3rem, 14vw, 4.5rem);
+  line-height: 1.1;
+  margin: 0 0 10px;
   color: var(--heading);
 }
 
 h2 {
   font-family: 'Chicle', serif;
-  font-size: 5em;
-  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 8vw, 3.25rem);
+  line-height: 1.15;
+  margin: 30px 0 20px;
   color: var(--heading);
 }
 
 p {
   font-size: 1.2em;
   line-height: 1.6;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   color: var(--text);
 }
 
@@ -95,50 +78,37 @@ a {
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+a:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
 
-a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
-}
+/* Google Form */
+.form-wrap { width: 100%; max-width: 640px; margin: 0 auto 20px; }
+.form-wrap iframe { display: block; width: 100%; height: 3376px; border: 0; }
 
-/* Responsive adjustments */
+footer { padding: 10px 16px 30px; }
+footer p { font-size: 0.9rem; }
+
+/* Phones: the form wraps onto more lines in a narrow column, so it needs more height */
 @media (max-width: 600px) {
-  .logo {
-    max-width: 150px;
-  }
-
-  .site-links img {
-    max-width: 200px;
-  }
-
-  h1 {
-    font-size: 2.5em;
-  }
+  .container { padding: 12px 10px; }
+  .logo  { max-width: 170px; }
+  p { font-size: 1.05em; }
+  .form-wrap iframe { height: 4200px; }
 }
 
+/* Large screens */
 @media (min-width: 1024px) {
-  .logo {
-    max-width: 250px;
-  }
-
-  .site-links img {
-    max-width: 350px;
-  }
-
-  h1 {
-    font-size: 4.5em;
-  }
+  .logo { max-width: 280px; }
 }
 
-/* Audio player */
-audio {
-  width: 100%;
-  max-width: 400px;
-  margin: 10px auto;
-  display: block;
-}
+/* Optional extras from the original stylesheet (unused on this page) */
+.site-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.site-links img { max-width: 300px; transition: transform 0.2s ease-in-out; }
+.site-links img:hover { transform: scale(1.05); }
+.logos { width: 40px; height: auto; }
 
-/* Video container */
+audio { width: 100%; max-width: 400px; margin: 10px auto; display: block; }
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -149,12 +119,11 @@ audio {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(35, 75, 53, 0.15);
 }
-
 .video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }
